@@ -16,9 +16,12 @@
 <div id="modalRoot"></div><div id="toast" class="toast hidden"></div>
 <script>
 /* Configuração pública do projeto Supabase. Nunca coloque a service_role neste arquivo. */
-const SUPABASE_URL='https://rtzkkhxnukbwcxgonbtu.supabase.co';
-const SUPABASE_ANON_KEY='sb_publishable_jTnHRlXdfZ_uYIz7bzDKjQ_lS4xCfwo';
-const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+const PROJECT_URL = 'https://rtzkkhxnukbwcxgonbtu.supabase.co';
+const PROJECT_KEY ='sb_publishable_jTnHRlXdfZ_uYIz7bzDKjQ_lS4xCfwo';
+const sbClient = window.supabase.createClient(
+  PROJECT_URL,
+  PROJECT_KEY
+);
 const ROLE_TO_UI={administrador:'Administrador',gestor:'Gestor',supervisor:'Supervisor',operador:'Operador'};
 const UI_TO_ROLE={'Administrador':'administrador','TI/Admin':'administrador','Gestor':'gestor','Supervisor':'supervisor','Operador':'operador'};
 const STATUS_TO_DB={'Não iniciada':'pendente','Em andamento':'em_andamento','Concluída':'concluida','Cancelada':'cancelada'};
